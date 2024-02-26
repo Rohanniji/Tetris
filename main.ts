@@ -1,7 +1,4 @@
 scene.onHitWall(SpriteKind.Player, function (sprite, location) {
-    if (Sprite2.isHittingTile(CollisionDirection.Left) || Sprite2.isHittingTile(CollisionDirection.Right)) {
-    	
-    }
     if (Sprite2.isHittingTile(CollisionDirection.Bottom)) {
         if (Sprite2.image.equals(img`
             . . . . . . . . . . . . . . . . 
@@ -91,7 +88,14 @@ function SpawnSprite () {
     NextSprite.setImage(Blocks._pickRandom())
     tiles.placeOnTile(Sprite2, tiles.getTileLocation(randint(2, 12), 2))
     Sprite2.vy = 75
-    controller.moveSprite(Sprite2)
+    controller.moveSprite(Sprite2, 100, 100)
+}
+controller.down.onEvent(ControllerButtonEvent.Repeated, function () {
+    Sprite2.vy = 150
+    info.changeScoreBy(1)
+})
+function Rotate (num: number) {
+	
 }
 let Sprite2: Sprite = null
 let NextSprite: Sprite = null
