@@ -248,7 +248,7 @@ function Rotate (num: number) {
         . . f f f f f f f f f f f f f . 
         `)) {
         for (let index = 0; index <= RotationsLong.length - 1; index++) {
-            Sprite2.setImage(RotationsLong[(index + 1) % 2])
+            Sprite2.setImage(RotationsLong[index + 1])
         }
     } else if (Sprite2.image.equals(img`
         . . . . . . . . . . . . . . . . 
@@ -286,7 +286,7 @@ function Rotate (num: number) {
         . . . . . . f f f f f . . . . . 
         `)) {
         for (let index = 0; index <= RotationsSwiggle.length - 1; index++) {
-            Sprite2.setImage(RotationsSwiggle[(index + 1) % 2])
+            Sprite2.setImage(RotationsSwiggle[index + 1])
         }
     } else if (Sprite2.image.equals(img`
         . . . . . . . . . . . . . . . . 
@@ -358,7 +358,7 @@ function Rotate (num: number) {
         . . . f f f f f . . . . . . . . 
         `))) {
         for (let index = 0; index <= RotationsLshape.length - 1; index++) {
-            Sprite2.setImage(RotationsLshape[(index + 1) % 4])
+            Sprite2.setImage(RotationsLshape[index + 1])
         }
     }
     info.changeScoreBy(num - (num - 1))
