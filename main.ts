@@ -595,7 +595,7 @@ NextSprite.scale += 8
 info.setScore(0)
 game.onUpdate(function () {
     for (let value of tiles.getTilesByType(assets.tile`myTile`)) {
-        while (tiles.tileAtLocationEquals(tiles.getTileLocation(tiles.locationXY(value, tiles.XY.column), tiles.locationXY(value, tiles.XY.column) - 1), assets.tile`myTile3`)) {
+        if (tiles.tileAtLocationEquals(tiles.getTileLocation(tiles.locationXY(value, tiles.XY.column), tiles.locationXY(value, tiles.XY.column) - 1), assets.tile`myTile3`)) {
             game.gameOver(false)
         }
     }
