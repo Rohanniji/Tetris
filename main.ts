@@ -166,13 +166,16 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
     }
 })
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    Rotate()
+    Rotate(info.score())
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (count < 1) {
         count += 1
         SpawnSprite()
     }
+})
+controller.down.onEvent(ControllerButtonEvent.Released, function () {
+    Sprite2.vy = 75
 })
 function SpawnSprite () {
     if (NextSprite.image.equals(img`
@@ -208,7 +211,7 @@ controller.down.onEvent(ControllerButtonEvent.Repeated, function () {
     Sprite2.vy = 150
     info.changeScoreBy(1)
 })
-function Rotate () {
+function Rotate (num: number) {
     if (Sprite2.image.equals(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -245,7 +248,7 @@ function Rotate () {
         . . f f f f f f f f f f f f f . 
         `)) {
         for (let index = 0; index <= RotationsLong.length - 1; index++) {
-            Sprite2.setImage(RotationsLong[index + 1])
+            Sprite2.setImage(RotationsLong[(index + 1) % 2])
         }
     } else if (Sprite2.image.equals(img`
         . . . . . . . . . . . . . . . . 
@@ -283,7 +286,7 @@ function Rotate () {
         . . . . . . f f f f f . . . . . 
         `)) {
         for (let index = 0; index <= RotationsSwiggle.length - 1; index++) {
-            Sprite2.setImage(RotationsSwiggle[index + 1])
+            Sprite2.setImage(RotationsSwiggle[(index + 1) % 2])
         }
     } else if (Sprite2.image.equals(img`
         . . . . . . . . . . . . . . . . 
@@ -355,9 +358,10 @@ function Rotate () {
         . . . f f f f f . . . . . . . . 
         `))) {
         for (let index = 0; index <= RotationsLshape.length - 1; index++) {
-            Sprite2.setImage(RotationsLshape[index + 1])
+            Sprite2.setImage(RotationsLshape[(index + 1) % 4])
         }
     }
+    info.changeScoreBy(num - (num - 1))
 }
 let Sprite2: Sprite = null
 let count = 0
