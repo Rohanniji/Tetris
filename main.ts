@@ -56,7 +56,7 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
     }
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile`, function (sprite, location) {
-    game.gameOver(false)
+    tiles.setTileAt(tiles.getTileLocation(0, 0), assets.tile`myTile1`)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     SpawnSprite()
@@ -84,7 +84,6 @@ function SpawnSprite () {
         Sprite2.scale += 2.5
     } else {
         Sprite2 = sprites.create(NextSprite.image, SpriteKind.Player)
-        Sprite2.scale += 2.5
     }
     NextSprite.setImage(Blocks._pickRandom())
     tiles.placeOnTile(Sprite2, tiles.getTileLocation(randint(2, 12), 2))
@@ -92,19 +91,12 @@ function SpawnSprite () {
     controller.moveSprite(Sprite2, 100, 100)
 }
 controller.down.onEvent(ControllerButtonEvent.Repeated, function () {
-    Sprite2.vx += 150
+    Sprite2.vy = 150
     info.changeScoreBy(1)
 })
 function Rotate (num: number) {
 	
 }
-function EndGame () {
-    Top = tiles.getTilesByType(assets.tile`myTile`)
-    while (!(tiles.tileAtLocationEquals(tiles.getTileLocation(tiles.locationXY(Top, tiles.XY.column), tiles.locationXY(Top, tiles.XY.column) - 0), assets.tile`myTile3`))) {
-    	
-    }
-}
-let Top: tiles.Location[] = []
 let Sprite2: Sprite = null
 let NextSprite: Sprite = null
 let Blocks: Image[] = []
