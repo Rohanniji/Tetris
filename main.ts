@@ -18,9 +18,9 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
             . . . . . f 2 2 2 f . . . . . . 
             . . . . . f f f f f . . . . . . 
             `)) {
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row + 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row - 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 2), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 3), assets.tile`myTile3`)
         } else if (sprite.image.equals(img`
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -39,10 +39,10 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
             . . . . . f 2 2 2 f 2 2 2 f . . 
             . . . . . f f f f f f f f f . . 
             `)) {
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column - 1, Sprite2.tilemapLocation().row), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column + 1, Sprite2.tilemapLocation().row + 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row + 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column - 1, location.row - 2), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column + 1, location.row - 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 2), assets.tile`myTile3`)
         } else if (sprite.image.equals(img`
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -61,10 +61,10 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
             . . . . . . f 2 2 2 f . . . . . 
             . . . . . . f f f f f . . . . . 
             `)) {
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column - 1, Sprite2.tilemapLocation().row - 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row + 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row - 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 2), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 3), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column - 1, location.row - 3), assets.tile`myTile3`)
         } else if (sprite.image.equals(img`
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -83,9 +83,9 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
             . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
             . . f f f f f f f f f f f f f . 
             `)) {
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row + 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column - 1, Sprite2.tilemapLocation().row + 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column + 1, Sprite2.tilemapLocation().row + 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column + 1, location.row - 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column - 1, location.row - 1), assets.tile`myTile3`)
         } else if (sprite.image.equals(img`
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -104,10 +104,10 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
             . . . . . . f 2 2 2 f . . . . . 
             . . . . . . f f f f f . . . . . 
             `)) {
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row - 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row - 2), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column + 1, Sprite2.tilemapLocation().row - 2), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column + 1, Sprite2.tilemapLocation().row - 3), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 2), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column + 1, location.row - 2), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column + 1, location.row - 3), assets.tile`myTile3`)
         } else if (sprite.image.equals(img`
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -126,10 +126,10 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
             . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
             . . f f f f f f f f f f f f f . 
             `)) {
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row - 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column + 1, Sprite2.tilemapLocation().row - 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column + 1, Sprite2.tilemapLocation().row - 2), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column - 1, Sprite2.tilemapLocation().row - 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column + 1, location.row - 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column + 1, location.row - 2), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column - 1, location.row - 1), assets.tile`myTile3`)
         } else if (sprite.image.equals(img`
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -148,15 +148,15 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
             . . . . f 2 2 2 f 2 2 2 f . . . 
             . . . . f f f f f f f f f . . . 
             `)) {
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row - 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column - 1, Sprite2.tilemapLocation().row - 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column - 1, Sprite2.tilemapLocation().row - 2), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column - 1, Sprite2.tilemapLocation().row - 3), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column - 1, location.row - 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column - 1, location.row - 2), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column - 1, location.row - 3), assets.tile`myTile3`)
         } else {
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column - 1, Sprite2.tilemapLocation().row + 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column - 1, Sprite2.tilemapLocation().row), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column + 1, Sprite2.tilemapLocation().row), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 2), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column - 1, location.row - 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column - 1, location.row - 2), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(location.column + 1, location.row - 2), assets.tile`myTile3`)
         }
         for (let value of tiles.getTilesByType(assets.tile`myTile3`)) {
             tiles.setWallAt(tiles.getTileLocation(value.column, value.row), true)
@@ -166,7 +166,7 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
     }
 })
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    Rotate(1)
+    Rotate(info.score())
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (count < 1) {
@@ -207,9 +207,6 @@ function SpawnSprite () {
     Sprite2.vy = 75
     controller.moveSprite(Sprite2, 100, 0)
 }
-function DestroyRow () {
-    tiles.setTileAt(tiles.getTileLocation(0, 0), assets.tile`myTile1`)
-}
 controller.down.onEvent(ControllerButtonEvent.Repeated, function () {
     Sprite2.vy = 150
     info.changeScoreBy(1)
@@ -232,26 +229,7 @@ function Rotate (num: number) {
         . . . . . f 2 2 2 f . . . . . . 
         . . . . . f 2 2 2 f . . . . . . 
         . . . . . f f f f f . . . . . . 
-        `)) {
-        Sprite2.setImage(img`
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . f f f f f f f f f f f f f . 
-            . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
-            . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
-            . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
-            . . f f f f f f f f f f f f f . 
-            `)
-    } else if (Sprite2.image.equals(img`
+        `) || Sprite2.image.equals(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -269,24 +247,9 @@ function Rotate (num: number) {
         . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
         . . f f f f f f f f f f f f f . 
         `)) {
-        Sprite2.setImage(img`
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . f f f f f . . . . . . 
-            . . . . . f 2 2 2 f . . . . . . 
-            . . . . . f 2 2 2 f . . . . . . 
-            . . . . . f 2 2 2 f . . . . . . 
-            . . . . . f f f f f . . . . . . 
-            . . . . . f 2 2 2 f . . . . . . 
-            . . . . . f 2 2 2 f . . . . . . 
-            . . . . . f 2 2 2 f . . . . . . 
-            . . . . . f f f f f . . . . . . 
-            . . . . . f 2 2 2 f . . . . . . 
-            . . . . . f 2 2 2 f . . . . . . 
-            . . . . . f 2 2 2 f . . . . . . 
-            . . . . . f f f f f . . . . . . 
-            `)
+        for (let index = 0; index <= RotationsLong.length - 1; index++) {
+            Sprite2.setImage(RotationsLong[index + 1])
+        }
     } else if (Sprite2.image.equals(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -304,26 +267,7 @@ function Rotate (num: number) {
         . . . . . f 2 2 2 f 2 2 2 f . . 
         . . . . . f 2 2 2 f 2 2 2 f . . 
         . . . . . f f f f f f f f f . . 
-        `)) {
-        Sprite2.setImage(img`
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . f f f f f . 
-            . . . . . . . . . . f 2 2 2 f . 
-            . . . . . . . . . . f 2 2 2 f . 
-            . . . . . . . . . . f 2 2 2 f . 
-            . . . . . . f f f f f f f f f . 
-            . . . . . . f 2 2 2 f 2 2 2 f . 
-            . . . . . . f 2 2 2 f 2 2 2 f . 
-            . . . . . . f 2 2 2 f 2 2 2 f . 
-            . . . . . . f f f f f f f f f . 
-            . . . . . . f 2 2 2 f . . . . . 
-            . . . . . . f 2 2 2 f . . . . . 
-            . . . . . . f 2 2 2 f . . . . . 
-            . . . . . . f f f f f . . . . . 
-            `)
-    } else if (Sprite2.image.equals(img`
+        `) || Sprite2.image.equals(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -341,34 +285,90 @@ function Rotate (num: number) {
         . . . . . . f 2 2 2 f . . . . . 
         . . . . . . f f f f f . . . . . 
         `)) {
-        Sprite2.setImage(img`
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . f f f f f f f f f . . . . . . 
-            . f 2 2 2 f 2 2 2 f . . . . . . 
-            . f 2 2 2 f 2 2 2 f . . . . . . 
-            . f 2 2 2 f 2 2 2 f . . . . . . 
-            . f f f f f f f f f f f f f . . 
-            . . . . . f 2 2 2 f 2 2 2 f . . 
-            . . . . . f 2 2 2 f 2 2 2 f . . 
-            . . . . . f 2 2 2 f 2 2 2 f . . 
-            . . . . . f f f f f f f f f . . 
-            `)
-    } else {
-        index = RotationsLshape.indexOf(Sprite2.image)
+        for (let index = 0; index <= RotationsSwiggle.length - 1; index++) {
+            Sprite2.setImage(RotationsSwiggle[index + 1])
+        }
+    } else if (Sprite2.image.equals(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . f f f f f f f f f . . . . . 
+        . . f 2 2 2 f 2 2 2 f . . . . . 
+        . . f 2 2 2 f 2 2 2 f . . . . . 
+        . . f 2 2 2 f 2 2 2 f . . . . . 
+        . . f f f f f f f f f . . . . . 
+        . . . . . . f 2 2 2 f . . . . . 
+        . . . . . . f 2 2 2 f . . . . . 
+        . . . . . . f 2 2 2 f . . . . . 
+        . . . . . . f f f f f . . . . . 
+        . . . . . . f 2 2 2 f . . . . . 
+        . . . . . . f 2 2 2 f . . . . . 
+        . . . . . . f 2 2 2 f . . . . . 
+        . . . . . . f f f f f . . . . . 
+        `) || Sprite2.image.equals(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . f f f f f . 
+        . . . . . . . . . . f 2 2 2 f . 
+        . . . . . . . . . . f 2 2 2 f . 
+        . . . . . . . . . . f 2 2 2 f . 
+        . . f f f f f f f f f f f f f . 
+        . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
+        . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
+        . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
+        . . f f f f f f f f f f f f f . 
+        `) || (Sprite2.image.equals(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . f f f f f . . . . . . . 
+        . . . . f 2 2 2 f . . . . . . . 
+        . . . . f 2 2 2 f . . . . . . . 
+        . . . . f 2 2 2 f . . . . . . . 
+        . . . . f f f f f . . . . . . . 
+        . . . . f 2 2 2 f . . . . . . . 
+        . . . . f 2 2 2 f . . . . . . . 
+        . . . . f 2 2 2 f . . . . . . . 
+        . . . . f f f f f f f f f . . . 
+        . . . . f 2 2 2 f 2 2 2 f . . . 
+        . . . . f 2 2 2 f 2 2 2 f . . . 
+        . . . . f 2 2 2 f 2 2 2 f . . . 
+        . . . . f f f f f f f f f . . . 
+        `) || Sprite2.image.equals(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . f f f f f f f f f f f f f 
+        . . . f 2 2 2 f 2 2 2 f 2 2 2 f 
+        . . . f 2 2 2 f 2 2 2 f 2 2 2 f 
+        . . . f 2 2 2 f 2 2 2 f 2 2 2 f 
+        . . . f f f f f f f f f f f f f 
+        . . . f 2 2 2 f . . . . . . . . 
+        . . . f 2 2 2 f . . . . . . . . 
+        . . . f 2 2 2 f . . . . . . . . 
+        . . . f f f f f . . . . . . . . 
+        `))) {
+        for (let index = 0; index <= RotationsLshape.length - 1; index++) {
+            Sprite2.setImage(RotationsLshape[index + 1])
+        }
     }
-    info.changeScoreBy(num)
+    info.changeScoreBy(num - (num - 1))
 }
-let index = 0
 let Sprite2: Sprite = null
 let count = 0
 let NextSprite: Sprite = null
 let RotationsLshape: Image[] = []
+let RotationsSwiggle: Image[] = []
+let RotationsLong: Image[] = []
 let Blocks: Image[] = []
 namespace userconfig {
     export const ARCADE_SCREEN_WIDTH = 515
@@ -427,7 +427,7 @@ Blocks = [img`
     . . . . . . f 2 2 2 f . . . . . 
     . . . . . . f f f f f . . . . . 
     `]
-let RotationsLong = [img`
+RotationsLong = [img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -462,7 +462,7 @@ let RotationsLong = [img`
     . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
     . . f f f f f f f f f f f f f . 
     `]
-let RotationsSwiggle = [img`
+RotationsSwiggle = [img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -593,26 +593,10 @@ count = 0
 tiles.placeOnTile(NextSprite, tiles.getTileLocation(23, 13))
 NextSprite.scale += 8
 info.setScore(0)
-let flag = true
 game.onUpdate(function () {
     for (let value of tiles.getTilesByType(assets.tile`myTile`)) {
-        if (tiles.tileAtLocationEquals(tiles.getTileLocation(value.column, value.row + 1), assets.tile`myTile3`)) {
+        if (tiles.tileAtLocationEquals(tiles.getTileLocation(tiles.locationXY(value, tiles.XY.column), tiles.locationXY(value, tiles.XY.column) - 1), assets.tile`myTile3`)) {
             game.gameOver(false)
-        }
-    }
-    for (let row = 0; row <= 29; row++) {
-        flag = true
-        for (let col = 0; col <= 12; col++) {
-            if (!(tiles.tileAtLocationEquals(tiles.getTileLocation(col + 1, row + 1), assets.tile`myTile3`))) {
-                flag = false
-            }
-        }
-        if (flag) {
-            let col = 0
-            tiles.setTileAt(tiles.getTileLocation(col, row), assets.tile`myTile1`)
-            for (let value of tiles.getTilesByType(assets.tile`myTile3`)) {
-                tiles.setTileAt(tiles.getTileLocation(value.column, value.row + 1), assets.tile`myTile3`)
-            }
         }
     }
 })
