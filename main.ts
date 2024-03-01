@@ -205,19 +205,27 @@ function SpawnSprite () {
     NextSprite.setImage(Blocks._pickRandom())
     tiles.placeOnTile(Sprite2, tiles.getTileLocation(randint(2, 12), 2))
     Sprite2.vy = 75
+    controller.moveSprite(Sprite2, 100, 0)
 }
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (Sprite2.tileKindAt(TileDirection.Left, assets.tile`myTile0`)) {
-        Sprite2.x += 0
+function DestroyRow (bool: boolean) {
+    if (!(bool)) {
+        for (let row = 0; row <= 29; row++) {
+            for (let col = 0; col <= 12; col++) {
+                tiles.setTileAt(tiles.getTileLocation(col + 1, row + 1), assets.tile`myTile6`)
+            }
+        }
+        for (let ValueTurq of tiles.getTilesByType(assets.tile`myTile6`)) {
+            RowTurq = ValueTurq.row
+        }
+        for (let ValueBlue of tiles.getTilesByType(assets.tile`myTile3`)) {
+            RowBlue = ValueBlue.row
+            if (RowBlue < RowTurq) {
+                tiles.setTileAt(tiles.getTileLocation(ValueBlue.column, ValueBlue.row + 1), assets.tile`myTile3`)
+            }
+            tiles.setTileAt(tiles.getTileLocation(ValueBlue.column, ValueBlue.row), assets.tile`myTile3`)
+        }
     }
-    Sprite2.x += -17.5
-})
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (Sprite2.tileKindAt(TileDirection.Right, assets.tile`myTile0`)) {
-        Sprite2.x += 0
-    }
-    Sprite2.x += 17.5
-})
+}
 function PointBoost (bool: boolean) {
     if (bool) {
         tiles.setTileAt(tiles.getTileLocation(15, 15), assets.tile`myTile0`)
@@ -383,9 +391,9 @@ function Rotate (list: Image[]) {
     }
     info.changeScoreBy(10)
 }
+let index = 0
 let RowBlue = 0
 let RowTurq = 0
-let index = 0
 let Sprite2: Sprite = null
 let count = 0
 let NextSprite: Sprite = null
@@ -617,28 +625,16 @@ info.setScore(0)
 let flag = true
 PointBoost(game.ask("Do you want a point boost?"))
 game.onUpdate(function () {
-    for (let ValueTurq of tiles.getTilesByType(assets.tile`myTile`)) {
-        if (tiles.tileAtLocationEquals(tiles.getTileLocation(ValueTurq.column, ValueTurq.row + 1), assets.tile`myTile3`)) {
+    for (let value of tiles.getTilesByType(assets.tile`myTile`)) {
+        if (tiles.tileAtLocationEquals(tiles.getTileLocation(value.column, value.row + 1), assets.tile`myTile3`)) {
             game.gameOver(false)
         }
     }
     for (let row = 0; row <= 29; row++) {
         for (let col = 0; col <= 12; col++) {
-            if (!(tiles.tileAtLocationEquals(tiles.getTileLocation(col + 1, row + 1), assets.tile`myTile3`))) {
+            if (tiles.tileAtLocationEquals(tiles.getTileLocation(col + 1, row + 1), assets.tile`myTile3`)) {
                 flag = false
-            }
-            if (flag) {
-                tiles.setTileAt(tiles.getTileLocation(col + 1, row + 1), assets.tile`myTile6`)
-                for (let ValueTurq of tiles.getTilesByType(assets.tile`myTile6`)) {
-                    RowTurq = ValueTurq.row
-                }
-                for (let ValueBlue of tiles.getTilesByType(assets.tile`myTile3`)) {
-                    RowBlue = ValueBlue.row
-                    if (RowBlue < RowTurq) {
-                        tiles.setTileAt(tiles.getTileLocation(ValueBlue.column, ValueBlue.row + 1), assets.tile`myTile3`)
-                    }
-                    tiles.setTileAt(tiles.getTileLocation(ValueBlue.column, ValueBlue.row), assets.tile`myTile3`)
-                }
+                DestroyRow(flag)
             }
         }
     }
