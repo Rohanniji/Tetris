@@ -1,6 +1,3 @@
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    Rotate(info.score())
-})
 scene.onHitWall(SpriteKind.Player, function (sprite, location) {
     if (sprite.isHittingTile(CollisionDirection.Bottom)) {
         if (sprite.image.equals(img`
@@ -21,9 +18,9 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
             . . . . . f 2 2 2 f . . . . . . 
             . . . . . f f f f f . . . . . . 
             `)) {
-            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 2), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 3), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row + 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row - 1), assets.tile`myTile3`)
         } else if (sprite.image.equals(img`
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -42,10 +39,10 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
             . . . . . f 2 2 2 f 2 2 2 f . . 
             . . . . . f f f f f f f f f . . 
             `)) {
-            tiles.setTileAt(tiles.getTileLocation(location.column - 1, location.row - 2), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(location.column + 1, location.row - 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 2), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column - 1, Sprite2.tilemapLocation().row), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column + 1, Sprite2.tilemapLocation().row + 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row + 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row), assets.tile`myTile3`)
         } else if (sprite.image.equals(img`
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -64,10 +61,10 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
             . . . . . . f 2 2 2 f . . . . . 
             . . . . . . f f f f f . . . . . 
             `)) {
-            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 2), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 3), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(location.column - 1, location.row - 3), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row + 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row - 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column - 1, Sprite2.tilemapLocation().row - 1), assets.tile`myTile3`)
         } else if (sprite.image.equals(img`
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -86,9 +83,9 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
             . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
             . . f f f f f f f f f f f f f . 
             `)) {
-            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(location.column + 1, location.row - 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(location.column - 1, location.row - 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row + 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column + 1, Sprite2.tilemapLocation().row + 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column - 1, Sprite2.tilemapLocation().row + 1), assets.tile`myTile3`)
         } else if (sprite.image.equals(img`
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -107,10 +104,10 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
             . . . . . . f 2 2 2 f . . . . . 
             . . . . . . f f f f f . . . . . 
             `)) {
-            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 2), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(location.column + 1, location.row - 2), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(location.column + 1, location.row - 3), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row + 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column + 1, Sprite2.tilemapLocation().row), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column + 1, Sprite2.tilemapLocation().row - 1), assets.tile`myTile3`)
         } else if (sprite.image.equals(img`
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -129,10 +126,10 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
             . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
             . . f f f f f f f f f f f f f . 
             `)) {
-            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(location.column + 1, location.row - 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(location.column + 1, location.row - 2), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(location.column - 1, location.row - 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row + 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column + 1, Sprite2.tilemapLocation().row + 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column + 1, Sprite2.tilemapLocation().row), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column - 1, Sprite2.tilemapLocation().row + 1), assets.tile`myTile3`)
         } else if (sprite.image.equals(img`
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -151,15 +148,15 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
             . . . . f 2 2 2 f 2 2 2 f . . . 
             . . . . f f f f f f f f f . . . 
             `)) {
-            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(location.column - 1, location.row - 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(location.column - 1, location.row - 2), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(location.column - 1, location.row - 3), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column + 1, Sprite2.tilemapLocation().row + 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row + 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row - 1), assets.tile`myTile3`)
         } else {
-            tiles.setTileAt(tiles.getTileLocation(location.column, location.row - 2), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(location.column - 1, location.row - 1), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(location.column - 1, location.row - 2), assets.tile`myTile3`)
-            tiles.setTileAt(tiles.getTileLocation(location.column + 1, location.row - 2), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column, Sprite2.tilemapLocation().row), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column - 1, Sprite2.tilemapLocation().row + 1), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column - 1, Sprite2.tilemapLocation().row), assets.tile`myTile3`)
+            tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column + 1, Sprite2.tilemapLocation().row), assets.tile`myTile3`)
         }
         for (let value of tiles.getTilesByType(assets.tile`myTile3`)) {
             tiles.setWallAt(tiles.getTileLocation(value.column, value.row), true)
@@ -168,11 +165,8 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
         SpawnSprite()
     }
 })
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (count < 1) {
-        count += 1
-        SpawnSprite()
-    }
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    Rotate(RotationsLshape)
 })
 controller.down.onEvent(ControllerButtonEvent.Released, function () {
     Sprite2.vy = 75
@@ -244,7 +238,7 @@ function StartSequence (color: Image) {
         }
     }
 }
-function Rotate (num: number) {
+function Rotate (list: Image[]) {
     if (Sprite2.image.equals(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -262,7 +256,26 @@ function Rotate (num: number) {
         . . . . . f 2 2 2 f . . . . . . 
         . . . . . f 2 2 2 f . . . . . . 
         . . . . . f f f f f . . . . . . 
-        `) || Sprite2.image.equals(img`
+        `)) {
+        Sprite2.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . f f f f f f f f f f f f f . 
+            . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
+            . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
+            . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
+            . . f f f f f f f f f f f f f . 
+            `)
+    } else if (Sprite2.image.equals(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -280,27 +293,25 @@ function Rotate (num: number) {
         . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
         . . f f f f f f f f f f f f f . 
         `)) {
-        for (let index = 0; index <= RotationsLong.length - 1; index++) {
-            Sprite2.setImage(RotationsLong[index + 1])
-        }
+        Sprite2.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . f f f f f . . . . . . 
+            . . . . . f 2 2 2 f . . . . . . 
+            . . . . . f 2 2 2 f . . . . . . 
+            . . . . . f 2 2 2 f . . . . . . 
+            . . . . . f f f f f . . . . . . 
+            . . . . . f 2 2 2 f . . . . . . 
+            . . . . . f 2 2 2 f . . . . . . 
+            . . . . . f 2 2 2 f . . . . . . 
+            . . . . . f f f f f . . . . . . 
+            . . . . . f 2 2 2 f . . . . . . 
+            . . . . . f 2 2 2 f . . . . . . 
+            . . . . . f 2 2 2 f . . . . . . 
+            . . . . . f f f f f . . . . . . 
+            `)
     } else if (Sprite2.image.equals(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . f f f f f f f f f . . . . . . 
-        . f 2 2 2 f 2 2 2 f . . . . . . 
-        . f 2 2 2 f 2 2 2 f . . . . . . 
-        . f 2 2 2 f 2 2 2 f . . . . . . 
-        . f f f f f f f f f f f f f . . 
-        . . . . . f 2 2 2 f 2 2 2 f . . 
-        . . . . . f 2 2 2 f 2 2 2 f . . 
-        . . . . . f 2 2 2 f 2 2 2 f . . 
-        . . . . . f f f f f f f f f . . 
-        `) || Sprite2.image.equals(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -336,321 +347,53 @@ function Rotate (num: number) {
             . . . . . f 2 2 2 f 2 2 2 f . . 
             . . . . . f f f f f f f f f . . 
             `)
+    } else if (Sprite2.image.equals(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . f f f f f f f f f . . . . . . 
+        . f 2 2 2 f 2 2 2 f . . . . . . 
+        . f 2 2 2 f 2 2 2 f . . . . . . 
+        . f 2 2 2 f 2 2 2 f . . . . . . 
+        . f f f f f f f f f f f f f . . 
+        . . . . . f 2 2 2 f 2 2 2 f . . 
+        . . . . . f 2 2 2 f 2 2 2 f . . 
+        . . . . . f 2 2 2 f 2 2 2 f . . 
+        . . . . . f f f f f f f f f . . 
+        `)) {
+        Sprite2.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . f f f f f . 
+            . . . . . . . . . . f 2 2 2 f . 
+            . . . . . . . . . . f 2 2 2 f . 
+            . . . . . . . . . . f 2 2 2 f . 
+            . . . . . . f f f f f f f f f . 
+            . . . . . . f 2 2 2 f 2 2 2 f . 
+            . . . . . . f 2 2 2 f 2 2 2 f . 
+            . . . . . . f 2 2 2 f 2 2 2 f . 
+            . . . . . . f f f f f f f f f . 
+            . . . . . . f 2 2 2 f . . . . . 
+            . . . . . . f 2 2 2 f . . . . . 
+            . . . . . . f 2 2 2 f . . . . . 
+            . . . . . . f f f f f . . . . . 
+            `)
     } else {
-        // StartCol = list.indexOf(Sprite2.image)
-        // Sprite2.setImage(list[(StartCol + 1) % 4])
-        for (let index2 = 0; index2 <= RotationsSwiggle.length - 1; index2++) {
-            Sprite2.setImage(RotationsSwiggle[index2 + 1])
-        }
+        Index_L = list.indexOf(Sprite2.image)
+        Sprite2.setImage(list[(Index_L + 1) % 4])
     }
-    if (Sprite2.image.equals(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . f f f f f f f f f . . . . . 
-        . . f 2 2 2 f 2 2 2 f . . . . . 
-        . . f 2 2 2 f 2 2 2 f . . . . . 
-        . . f 2 2 2 f 2 2 2 f . . . . . 
-        . . f f f f f f f f f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f f f f f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f f f f f . . . . . 
-        `) || Sprite2.image.equals(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . f f f f f . 
-        . . . . . . . . . . f 2 2 2 f . 
-        . . . . . . . . . . f 2 2 2 f . 
-        . . . . . . . . . . f 2 2 2 f . 
-        . . f f f f f f f f f f f f f . 
-        . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
-        . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
-        . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
-        . . f f f f f f f f f f f f f . 
-        `) || (Sprite2.image.equals(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . f f f f f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f f f f f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f f f f f f f f f . . . 
-        . . . . f 2 2 2 f 2 2 2 f . . . 
-        . . . . f 2 2 2 f 2 2 2 f . . . 
-        . . . . f 2 2 2 f 2 2 2 f . . . 
-        . . . . f f f f f f f f f . . . 
-        `) || Sprite2.image.equals(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . f f f f f f f f f f f f f 
-        . . . f 2 2 2 f 2 2 2 f 2 2 2 f 
-        . . . f 2 2 2 f 2 2 2 f 2 2 2 f 
-        . . . f 2 2 2 f 2 2 2 f 2 2 2 f 
-        . . . f f f f f f f f f f f f f 
-        . . . f 2 2 2 f . . . . . . . . 
-        . . . f 2 2 2 f . . . . . . . . 
-        . . . f 2 2 2 f . . . . . . . . 
-        . . . f f f f f . . . . . . . . 
-        `))) {
-        for (let index3 = 0; index3 <= RotationsLshape.length - 1; index3++) {
-            Sprite2.setImage(RotationsLshape[index3 + 1])
-        }
-        for (let index4 = 0; index4 <= RotationsSwiggle.length - 1; index4++) {
-            Sprite2.setImage(RotationsSwiggle[index4 + 1])
-        }
-    } else if (Sprite2.image.equals(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . f f f f f f f f f . . . . . 
-        . . f 2 2 2 f 2 2 2 f . . . . . 
-        . . f 2 2 2 f 2 2 2 f . . . . . 
-        . . f 2 2 2 f 2 2 2 f . . . . . 
-        . . f f f f f f f f f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f f f f f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f f f f f . . . . . 
-        `) || Sprite2.image.equals(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . f f f f f . 
-        . . . . . . . . . . f 2 2 2 f . 
-        . . . . . . . . . . f 2 2 2 f . 
-        . . . . . . . . . . f 2 2 2 f . 
-        . . f f f f f f f f f f f f f . 
-        . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
-        . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
-        . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
-        . . f f f f f f f f f f f f f . 
-        `) || (Sprite2.image.equals(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . f f f f f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f f f f f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f f f f f f f f f . . . 
-        . . . . f 2 2 2 f 2 2 2 f . . . 
-        . . . . f 2 2 2 f 2 2 2 f . . . 
-        . . . . f 2 2 2 f 2 2 2 f . . . 
-        . . . . f f f f f f f f f . . . 
-        `) || Sprite2.image.equals(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . f f f f f f f f f f f f f 
-        . . . f 2 2 2 f 2 2 2 f 2 2 2 f 
-        . . . f 2 2 2 f 2 2 2 f 2 2 2 f 
-        . . . f 2 2 2 f 2 2 2 f 2 2 2 f 
-        . . . f f f f f f f f f f f f f 
-        . . . f 2 2 2 f . . . . . . . . 
-        . . . f 2 2 2 f . . . . . . . . 
-        . . . f 2 2 2 f . . . . . . . . 
-        . . . f f f f f . . . . . . . . 
-        `))) {
-        for (let index5 = 0; index5 <= RotationsLshape.length - 1; index5++) {
-            Sprite2.setImage(RotationsLshape[index5 + 1])
-        }
-        for (let index6 = 0; index6 <= RotationsSwiggle.length - 1; index6++) {
-            Sprite2.setImage(RotationsSwiggle[index6 + 1])
-        }
-    } else if (Sprite2.image.equals(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . f f f f f f f f f . . . . . 
-        . . f 2 2 2 f 2 2 2 f . . . . . 
-        . . f 2 2 2 f 2 2 2 f . . . . . 
-        . . f 2 2 2 f 2 2 2 f . . . . . 
-        . . f f f f f f f f f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f f f f f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f f f f f . . . . . 
-        `) || Sprite2.image.equals(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . f f f f f . 
-        . . . . . . . . . . f 2 2 2 f . 
-        . . . . . . . . . . f 2 2 2 f . 
-        . . . . . . . . . . f 2 2 2 f . 
-        . . f f f f f f f f f f f f f . 
-        . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
-        . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
-        . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
-        . . f f f f f f f f f f f f f . 
-        `) || (Sprite2.image.equals(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . f f f f f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f f f f f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f f f f f f f f f . . . 
-        . . . . f 2 2 2 f 2 2 2 f . . . 
-        . . . . f 2 2 2 f 2 2 2 f . . . 
-        . . . . f 2 2 2 f 2 2 2 f . . . 
-        . . . . f f f f f f f f f . . . 
-        `) || Sprite2.image.equals(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . f f f f f f f f f f f f f 
-        . . . f 2 2 2 f 2 2 2 f 2 2 2 f 
-        . . . f 2 2 2 f 2 2 2 f 2 2 2 f 
-        . . . f 2 2 2 f 2 2 2 f 2 2 2 f 
-        . . . f f f f f f f f f f f f f 
-        . . . f 2 2 2 f . . . . . . . . 
-        . . . f 2 2 2 f . . . . . . . . 
-        . . . f 2 2 2 f . . . . . . . . 
-        . . . f f f f f . . . . . . . . 
-        `))) {
-        for (let index7 = 0; index7 <= RotationsLshape.length - 1; index7++) {
-            Sprite2.setImage(RotationsLshape[index7 + 1])
-        }
-        for (let index8 = 0; index8 <= RotationsSwiggle.length - 1; index8++) {
-            Sprite2.setImage(RotationsSwiggle[index8 + 1])
-        }
-    } else if (Sprite2.image.equals(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . f f f f f f f f f . . . . . 
-        . . f 2 2 2 f 2 2 2 f . . . . . 
-        . . f 2 2 2 f 2 2 2 f . . . . . 
-        . . f 2 2 2 f 2 2 2 f . . . . . 
-        . . f f f f f f f f f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f f f f f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f 2 2 2 f . . . . . 
-        . . . . . . f f f f f . . . . . 
-        `) || Sprite2.image.equals(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . f f f f f . 
-        . . . . . . . . . . f 2 2 2 f . 
-        . . . . . . . . . . f 2 2 2 f . 
-        . . . . . . . . . . f 2 2 2 f . 
-        . . f f f f f f f f f f f f f . 
-        . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
-        . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
-        . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
-        . . f f f f f f f f f f f f f . 
-        `) || (Sprite2.image.equals(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . f f f f f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f f f f f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f 2 2 2 f . . . . . . . 
-        . . . . f f f f f f f f f . . . 
-        . . . . f 2 2 2 f 2 2 2 f . . . 
-        . . . . f 2 2 2 f 2 2 2 f . . . 
-        . . . . f 2 2 2 f 2 2 2 f . . . 
-        . . . . f f f f f f f f f . . . 
-        `) || Sprite2.image.equals(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . f f f f f f f f f f f f f 
-        . . . f 2 2 2 f 2 2 2 f 2 2 2 f 
-        . . . f 2 2 2 f 2 2 2 f 2 2 2 f 
-        . . . f 2 2 2 f 2 2 2 f 2 2 2 f 
-        . . . f f f f f f f f f f f f f 
-        . . . f 2 2 2 f . . . . . . . . 
-        . . . f 2 2 2 f . . . . . . . . 
-        . . . f 2 2 2 f . . . . . . . . 
-        . . . f f f f f . . . . . . . . 
-        `))) {
-        for (let index9 = 0; index9 <= RotationsLshape.length - 1; index9++) {
-            Sprite2.setImage(RotationsLshape[index9 + 1])
-        }
-    }
-    info.changeScoreBy(num - (num - 1))
 }
+let Index_L = 0
 let RowBlue = 0
 let RowTurq = 0
 let Sprite2: Sprite = null
-let count = 0
 let NextSprite: Sprite = null
 let RotationsLshape: Image[] = []
-let RotationsSwiggle: Image[] = []
-let RotationsLong: Image[] = []
 let Blocks: Image[] = []
 let StartCol2 = 0
 namespace userconfig {
@@ -710,7 +453,7 @@ Blocks = [img`
     . . . . . . f 2 2 2 f . . . . . 
     . . . . . . f f f f f . . . . . 
     `]
-RotationsLong = [img`
+let RotationsLong = [img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -745,7 +488,7 @@ RotationsLong = [img`
     . . f 2 2 2 f 2 2 2 f 2 2 2 f . 
     . . f f f f f f f f f f f f f . 
     `]
-RotationsSwiggle = [img`
+let RotationsSwiggle = [img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -878,13 +621,13 @@ info.setScore(0)
 let flag = true
 PointBoost(game.ask("Do you want a point boost?"))
 timer.after(500, function () {
-    StartSequence(img`myTile11`)
+    StartSequence(assets.tile`myTile`)
 })
 timer.after(1000, function () {
-    StartSequence(img`myTile12`)
+    StartSequence(assets.tile`myTile7`)
 })
 timer.after(1500, function () {
-    StartSequence(img`myTile13`)
+    StartSequence(assets.tile`myTile8`)
 })
 timer.after(2000, function () {
     StartSequence(assets.tile`myTile1`)
