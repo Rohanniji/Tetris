@@ -201,32 +201,6 @@ function SpawnSprite () {
     Sprite2.vy = 75
     controller.moveSprite(Sprite2, 100, 0)
 }
-function DestroyRow (bool: boolean) {
-    if (true) {
-        for (let row = 0; row <= 29; row++) {
-            for (let col = 0; col <= 12; col++) {
-            	
-            }
-        }
-        for (let ValueTurq of tiles.getTilesByType(assets.tile`myTile6`)) {
-            RowTurq = ValueTurq.row
-        }
-        for (let ValueBlue of tiles.getTilesByType(assets.tile`myTile3`)) {
-            RowBlue = ValueBlue.row
-            if (RowBlue < RowTurq) {
-                tiles.setTileAt(tiles.getTileLocation(ValueBlue.column, ValueBlue.row + 1), assets.tile`myTile3`)
-            }
-            tiles.setTileAt(tiles.getTileLocation(ValueBlue.column, ValueBlue.row), assets.tile`myTile3`)
-        }
-    }
-}
-function PointBoost (bool: boolean) {
-    if (bool) {
-        tiles.setTileAt(tiles.getTileLocation(15, 15), assets.tile`myTile0`)
-    } else {
-        tiles.setTileAt(tiles.getTileLocation(15, 15), assets.tile`myTile1`)
-    }
-}
 controller.down.onEvent(ControllerButtonEvent.Repeated, function () {
     Sprite2.vy = 150
     info.changeScoreBy(1)
@@ -389,8 +363,6 @@ function Rotate (list: Image[]) {
     }
 }
 let Index_L = 0
-let RowBlue = 0
-let RowTurq = 0
 let Sprite2: Sprite = null
 let NextSprite: Sprite = null
 let RotationsLshape: Image[] = []
@@ -619,7 +591,6 @@ tiles.placeOnTile(NextSprite, tiles.getTileLocation(23, 13))
 NextSprite.scale += 8
 info.setScore(0)
 let flag = true
-PointBoost(game.ask("Do you want a point boost?"))
 timer.after(500, function () {
     StartSequence(assets.tile`myTile`)
 })
@@ -635,7 +606,7 @@ timer.after(2000, function () {
 })
 game.onUpdate(function () {
     for (let value2 of tiles.getTilesByType(assets.tile`myTile`)) {
-        if (tiles.tileAtLocationEquals(tiles.getTileLocation(tiles.locationXY(value2, tiles.XY.column), tiles.locationXY(value2, tiles.XY.column) - 1), assets.tile`myTile3`)) {
+        if (tiles.tileAtLocationEquals(tiles.getTileLocation(tiles.locationXY(value2, tiles.XY.column), tiles.locationXY(value2, tiles.XY.row) + 1), assets.tile`myTile3`)) {
             game.gameOver(false)
         }
     }
