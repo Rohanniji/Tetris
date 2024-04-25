@@ -1,3 +1,6 @@
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    Rotate(RotationsLshape)
+})
 scene.onHitWall(SpriteKind.Player, function (sprite, location) {
     if (sprite.isHittingTile(CollisionDirection.Bottom)) {
         if (sprite.image.equals(img`
@@ -158,15 +161,12 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
             tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column - 1, Sprite2.tilemapLocation().row), assets.tile`myTile3`)
             tiles.setTileAt(tiles.getTileLocation(Sprite2.tilemapLocation().column + 1, Sprite2.tilemapLocation().row), assets.tile`myTile3`)
         }
-        for (let value of tiles.getTilesByType(assets.tile`myTile3`)) {
-            tiles.setWallAt(tiles.getTileLocation(value.column, value.row), true)
+        for (let ValueBlue of tiles.getTilesByType(assets.tile`myTile3`)) {
+            tiles.setWallAt(tiles.getTileLocation(ValueBlue.column, ValueBlue.row), true)
         }
         sprites.destroy(sprite)
         SpawnSprite()
     }
-})
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    Rotate(RotationsLshape)
 })
 controller.down.onEvent(ControllerButtonEvent.Released, function () {
     Sprite2.vy = 75
@@ -191,7 +191,6 @@ function SpawnSprite () {
         . . . . . . . . . . . . . . . . 
         `)) {
         Sprite2 = sprites.create(Blocks._pickRandom(), SpriteKind.Player)
-        Sprite2.scale += 2.5
     } else {
         Sprite2 = sprites.create(NextSprite.image, SpriteKind.Player)
         Sprite2.scale += 2.5
@@ -201,11 +200,31 @@ function SpawnSprite () {
     Sprite2.vy = 75
     controller.moveSprite(Sprite2, 100, 0)
 }
+function PointBoost (bool: boolean) {
+    if (bool) {
+        tiles.setCurrentTilemap(tilemap`level2`)
+    } else {
+        tiles.setCurrentTilemap(tilemap`level0`)
+    }
+}
 controller.down.onEvent(ControllerButtonEvent.Repeated, function () {
     Sprite2.vy = 150
-    info.changeScoreBy(1)
+    if (mySprite) {
+        info.changeScoreBy(5)
+    } else {
+        info.changeScoreBy(1)
+    }
 })
-function StartSequence (color: Image) {
+function StartSequence (color: Image, bool: boolean) {
+    if (count < 1) {
+        if (bool) {
+            info.setScore(10)
+            count += 1
+        } else {
+            info.setScore(0)
+            count += 1
+        }
+    }
     for (let StartCol = 0; StartCol <= 12; StartCol++) {
         for (let StartRow = 0; StartRow <= 29; StartRow++) {
             tiles.setTileAt(tiles.getTileLocation(StartCol + 1, StartRow + 1), color)
@@ -364,13 +383,14 @@ function Rotate (list: Image[]) {
 }
 let Index_L = 0
 let Sprite2: Sprite = null
+let mySprite = false
 let NextSprite: Sprite = null
+let count = 0
 let RotationsLshape: Image[] = []
 let Blocks: Image[] = []
-let StartCol2 = 0
 namespace userconfig {
-    export const ARCADE_SCREEN_WIDTH = 515
-    export const ARCADE_SCREEN_HEIGHT = 515
+    export const ARCADE_SCREEN_WIDTH = 525
+    export const ARCADE_SCREEN_HEIGHT = 510
 }
 tiles.setCurrentTilemap(tilemap`level2`)
 Blocks = [img`
@@ -569,6 +589,7 @@ img`
     . . . f f f f f . . . . . . . . 
     `
 ]
+count = 0
 NextSprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -589,24 +610,24 @@ NextSprite = sprites.create(img`
     `, SpriteKind.Player)
 tiles.placeOnTile(NextSprite, tiles.getTileLocation(23, 13))
 NextSprite.scale += 8
-info.setScore(0)
-let flag = true
+mySprite = game.ask("Do you want a point boost?")
+PointBoost(mySprite)
 timer.after(500, function () {
-    StartSequence(assets.tile`myTile`)
+    StartSequence(assets.tile`myTile`, mySprite)
 })
 timer.after(1000, function () {
-    StartSequence(assets.tile`myTile7`)
+    StartSequence(assets.tile`myTile7`, mySprite)
 })
 timer.after(1500, function () {
-    StartSequence(assets.tile`myTile8`)
+    StartSequence(assets.tile`myTile8`, mySprite)
 })
 timer.after(2000, function () {
-    StartSequence(assets.tile`myTile1`)
+    StartSequence(assets.tile`myTile1`, mySprite)
     SpawnSprite()
 })
 game.onUpdate(function () {
-    for (let value2 of tiles.getTilesByType(assets.tile`myTile`)) {
-        if (tiles.tileAtLocationEquals(tiles.getTileLocation(tiles.locationXY(value2, tiles.XY.column), tiles.locationXY(value2, tiles.XY.row) + 1), assets.tile`myTile3`)) {
+    for (let ValueRed of tiles.getTilesByType(assets.tile`myTile`)) {
+        if (tiles.tileAtLocationEquals(tiles.getTileLocation(tiles.locationXY(ValueRed, tiles.XY.column), tiles.locationXY(ValueRed, tiles.XY.column) - 1), assets.tile`myTile3`)) {
             game.gameOver(false)
         }
     }
